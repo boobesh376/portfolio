@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-
-const projectImg1 = 'https://www.figma.com/api/mcp/asset/9da83e54-91f4-46ca-9b44-4606ad8084c8'
-const projectImg2 = 'https://www.figma.com/api/mcp/asset/cfbd0e87-792c-4e59-beb0-cbe80fe0cfc2'
-const projectImg3 = 'https://www.figma.com/api/mcp/asset/31cd4510-7b70-4bd2-ad83-07919b81c5b9'
+import projectImg1 from '../img/p1.png'
+import projectImg2 from '../img/c.png'
+import projectImg3 from '../img/jeni.png'
 
 const projects = [
   {

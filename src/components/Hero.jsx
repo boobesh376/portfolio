@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react'
-
-// Replace this with your actual profile photo URL or a local image import
-// e.g. import profileImg from '../assets/profile.jpg'
-const profileImg = 'https://www.figma.com/api/mcp/asset/fa2a7f35-03c5-4894-84d4-9394848d8a6f'
+import profileImg from '../img/home.png'
 
 const roles = ['Frontend Developer', 'UI/UX Designer', 'React Developer']
 

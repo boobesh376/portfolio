@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
-
-const profileImg2 = 'https://www.figma.com/api/mcp/asset/fa2a7f35-03c5-4894-84d4-9394848d8a6f'
+import profileImg2 from '../img/about.png'
 
 const smoothScroll = (id) => {
   const el = document.getElementById(id)

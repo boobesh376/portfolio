@@ -1,19 +1,29 @@
 import { useEffect, useRef, useState } from 'react'
+import htmlIcon from '../img/html.png'
+import cssIcon from '../img/devicon_css.png'
+import jsIcon from '../img/skill-icons_javascript.png'
+import tailwindIcon from '../img/logos_tailwindcss-icon.png'
+import reactIcon from '../img/vscode-icons_file-type-reactjs.png'
+import javaIcon from '../img/logos_java.png'
+import figmaIcon from '../img/devicon_figma.png'
+import photoshopIcon from '../img/devicon_photoshop.png'
+import aiIcon from '../img/logos_adobe-illustrator.png'
+import canvaIcon from '../img/devicon_canva.png'
 
 const devSkills = [
-  { name: 'HTML',        icon: 'https://www.figma.com/api/mcp/asset/2b920dd4-42a0-4c8a-b059-62141853cd49', level: 90 },
-  { name: 'CSS',         icon: 'https://www.figma.com/api/mcp/asset/742405c1-8cc1-46f8-a30c-dc9637de9c1c', level: 85 },
-  { name: 'JavaScript',  icon: 'https://www.figma.com/api/mcp/asset/bbcbd729-68ee-479d-b7a1-0904e047c3f2', level: 60 },
-  { name: 'Tailwind CSS',icon: 'https://www.figma.com/api/mcp/asset/37ddb6cd-394a-4daa-9dc4-088c4fe0e513', level: 88 },
-  { name: 'React JS',    icon: 'https://www.figma.com/api/mcp/asset/20aa13b5-5ab9-400c-8bcb-b4a85c455cd3', level: 75 },
-  { name: 'Java',        icon: 'https://www.figma.com/api/mcp/asset/10cd6953-ca8a-4d30-a6fd-97fcfc485e12', level: 55 },
+  { name: 'HTML',        icon: htmlIcon, level: 90 },
+  { name: 'CSS',         icon: cssIcon, level: 85 },
+  { name: 'JavaScript',  icon: jsIcon, level: 60 },
+  { name: 'Tailwind CSS',icon: tailwindIcon, level: 88 },
+  { name: 'React JS',    icon: reactIcon, level: 75 },
+  { name: 'Java',        icon: javaIcon, level: 55 },
 ]
 
 const designSkills = [
-  { name: 'Figma',             icon: 'https://www.figma.com/api/mcp/asset/c65a2651-3172-4eec-9b53-552df905f2eb', level: 88 },
-  { name: 'Photoshop',         icon: 'https://www.figma.com/api/mcp/asset/e5c7fa25-ee6f-4861-bd1e-7023e639ab42', level: 60 },
-  { name: 'Adobe Illustrator', icon: 'https://www.figma.com/api/mcp/asset/c215f28a-c6ea-4cc3-aa66-af67cc172879', level: 50 },
-  { name: 'Canva',             icon: 'https://www.figma.com/api/mcp/asset/bd4b64fc-2ea9-486d-9281-7c2f2251f9e3', level: 88 },
+  { name: 'Figma',             icon: figmaIcon, level: 88 },
+  { name: 'Photoshop',         icon: photoshopIcon, level: 60 },
+  { name: 'Adobe Illustrator', icon: aiIcon, level: 50 },
+  { name: 'Canva',             icon: canvaIcon, level: 88 },
 ]
 
 const softSkills = [
