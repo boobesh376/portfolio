@@ -1,38 +1,71 @@
 import { useEffect, useRef, useState } from 'react'
 import projectImg1 from '../img/p1.png'
-import projectImg2 from '../img/c.png'
-import projectImg3 from '../img/jeni.png'
+import projectImg2 from '../img/ScarpIQ project.jpeg'
+import projectImg3 from '../img/polypharmacy project.jpeg'
 
 const projects = [
   {
     id: 1,
-    title: 'DeFi Lego Dashboard',
-    shortDesc: 'A modular DeFi platform that chains swaps, staking & yield splitting into one-click workflows.',
-    description: `DeFi LEGO Dashboard is an intelligent, modular platform designed to simplify decentralized finance by treating complex protocols like building blocks. It empowers users to automate sophisticated "Pathways" — chaining swaps, staking, and yield splitting into seamless, one-click workflows. Featuring a beginner-friendly interface, it transforms fragmented liquidity into a unified, high-yield financial engine.\n\nThe dashboard provides real-time analytics, drag-and-drop protocol chaining, portfolio overview, and smart notifications — all wrapped in a sleek dark UI built for both novice and power DeFi users.`,
-    image: projectImg1,
-    live: 'https://aos-hackthon.vercel.app/',
-    tech: ['React JS', 'Tailwind CSS', 'JavaScript'],
-    type: 'Web App',
+    title: 'ScrapIQ - AI Powered Scrap Valuation System',
+
+    shortDesc:
+      'An intelligent AI platform that analyzes scrap materials, estimates value, and provides accurate pricing recommendations.',
+
+    description: `ScrapIQ is an AI-powered scrap valuation platform designed to modernize and simplify the scrap selling process. The system leverages artificial intelligence to identify scrap materials from uploaded images, estimate weight and condition, and generate accurate market-based pricing recommendations.
+
+With an interactive question engine and intelligent pricing workflow, it improves valuation accuracy while maintaining a smooth user experience. The platform combines machine learning, image analysis, and rule-based decision systems to deliver transparent and reliable results.
+
+The project features AI-powered material detection, condition assessment, dynamic valuation workflows, automated pricing calculations, and detailed valuation insights — all built to create a smarter and more efficient scrap recycling ecosystem.`,
+
+    image: projectImg2,
+
+    live: 'https://scarpiq.vercel.app',
+
+    tech: ['Next.js', 'Node.js', 'Supabase', 'Machine Learning'],
+
+    type: 'AI Web Application',
   },
+
   {
     id: 2,
-    title: 'Calvin Klein Perfume Project',
-    shortDesc: 'A luxury UI/UX design for the Eternity fragrance collection with premium micro-interactions.',
-    description: `Calvin Klein Perfume is a visually immersive UI/UX project inspired by the elegance of the Eternity fragrance collection. The design emphasizes luxury aesthetics, refined typography, and smooth micro-interactions to reflect the brand's premium identity.\n\nWith animated transitions and interactive "Explore" flows, it delivers a clean, modern, high-end digital shopping experience. The project features a custom product viewer, scent story storytelling section, and a seamless add-to-cart flow — all crafted in Figma with pixel-perfect attention to detail.`,
-    image: projectImg2,
-    live: 'https://www.figma.com/proto/vvHWvzYUsNTDIR6qfmVM7K/Calvin-Klein?node-id=25-705&starting-point-node-id=25%3A779',
-    tech: ['Figma', 'Photopea'],
-    type: 'UI/UX Design',
+    title: 'Geriatric Polypharmacy Clinical Decision Support System',
+
+    shortDesc:
+      'An AI-driven healthcare platform that predicts medication-related risks and assists clinicians with informed decision making.',
+
+    description: `Geriatric Polypharmacy Clinical Decision Support System is an AI-powered healthcare solution developed to assess medication-related risks among elderly patients and support safer clinical decision making. The platform generates structured patient summaries, risk predictions, and treatment insights for healthcare professionals.
+
+The system combines machine learning models with intuitive visual interfaces to help clinicians better understand patient conditions and potential adverse drug events. Special attention was given to explainable AI features to ensure transparency and trust in model-generated recommendations.
+
+The project includes patient risk analysis dashboards, predictive healthcare insights, explainable AI components, and responsive data visualization tools — all designed to improve patient safety and enhance treatment effectiveness.`,
+
+    image: projectImg3,
+
+    live: 'https://github.com/jananidelli14/Geriatric-Polypharmacy-CDSS.git',
+
+    tech: ['React', 'Python', 'Machine Learning', 'Explainable AI'],
+
+    type: 'AI Healthcare System',
   },
+
   {
     id: 3,
-    title: "Jeni's Splendid Ice Cream Project",
-    shortDesc: "A playful, modern UI/UX concept capturing Jeni's joyful, artisanal ice cream brand essence.",
-    description: `Jeni's Spindle Ice Cream is a playful and modern UI/UX concept that captures the brand's joyful, artisanal essence. The design combines soft colors, bold typography, and engaging product visuals to create an inviting browsing experience.\n\nWith intuitive navigation and smooth transitions, it transforms a traditional ice cream shop into a vibrant, user-focused digital experience. The project includes a flavor discovery section, a custom "build your scoop" interactive feature, and a loyalty rewards screen — all designed to make the user smile while they shop.`,
-    image: projectImg3,
-    live: 'https://www.figma.com/proto/83K8WX92BdFpDXHQrzBlDS/Jeni-s-Splendid-Ice-Creams?node-id=2054-2&starting-point-node-id=2054%3A2',
-    tech: ['Figma', 'Photopea'],
-    type: 'UI/UX Design',
+    title: 'DeFi Lego Dashboard',
+
+    shortDesc:
+      'A modular DeFi platform that chains swaps, staking & yield splitting into one-click workflows.',
+
+    description: `DeFi LEGO Dashboard is an intelligent, modular platform designed to simplify decentralized finance by treating complex protocols like building blocks. It empowers users to automate sophisticated pathways by chaining swaps, staking, and yield splitting into seamless, one-click workflows.
+
+The dashboard provides real-time analytics, drag-and-drop protocol chaining, portfolio overview, and smart notifications — all wrapped in a sleek dark UI built for both novice and power DeFi users.`,
+
+    image: projectImg1,
+
+    live: 'https://aos-hackthon.vercel.app/',
+
+    tech: ['React JS', 'Tailwind CSS', 'JavaScript'],
+
+    type: 'Web App',
   },
 ]
 

@@ -4,6 +4,7 @@ const navItems = [
   { label: 'HOME',     href: 'home' },
   { label: 'ABOUT',   href: 'about' },
   { label: 'PROJECTS',href: 'projects' },
+  { label: 'HACKATHONS', href: 'hackathons' },
   { label: 'SKILLS',  href: 'skills' },
   { label: 'CONTACT', href: 'contact' },
 ]
@@ -16,7 +17,7 @@ export default function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 50)
-      const sections = ['home', 'about', 'projects', 'skills', 'contact']
+      const sections = ['home', 'about', 'projects', 'hackathons', 'skills', 'contact']
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i])
         if (el && window.scrollY >= el.offsetTop - 130) {

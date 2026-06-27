@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import profileImg from '../img/home.png'
 
-const roles = ['Frontend Developer', 'UI/UX Designer', 'React Developer']
+const roles = ['UI/UX Designer', 'Full Stack Developer', 'AI & Machine Learning Engineer']
 
 const socialLinks = [
   {
@@ -77,7 +77,7 @@ export default function Hero() {
     <section id="home" className="hero-bg min-h-screen pt-20 flex items-center relative overflow-hidden">
 
       {/* ── Background decorative orbs ── */}
-      <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-primary/6 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/3 w-56 h-56 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-16 left-10 w-32 h-32 bg-primary/4 rounded-full blur-2xl pointer-events-none" />
 
@@ -113,9 +113,9 @@ export default function Hero() {
           </p>
 
           <p className="text-white/55 text-sm leading-relaxed mt-4 mb-7 max-w-md">
-            I create modern, user-centered digital experiences by combining creative design
-            thinking with efficient front-end development. Passionate about building visually
-            appealing interfaces and transforming ideas into responsive, interactive web applications.
+            I design and build end-to-end — from intuitive interfaces to the full-stack
+            systems and intelligent models behind them. My focus is on shipping software
+            that's fast, scalable and genuinely thoughtful to use.
           </p>
 
           {/* Social icons */}
@@ -154,9 +154,9 @@ export default function Hero() {
               <div className="w-full h-full rounded-[40px] bg-bg-dark" />
             </div>
 
-            {/* ── Second rotating ring ── */}
+            {/* ── Inner counter-rotating ring ── */}
             <div
-              className="absolute inset-[-10px] rounded-[50px] animate-spin-slow opacity-20"
+              className="absolute inset-1 rounded-[38px] animate-spin-slow opacity-30"
               style={{
                 background: 'conic-gradient(from 180deg, #00ffe5, transparent, transparent, #00ffe5)',
                 animationDuration: '14s',

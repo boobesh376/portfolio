@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <body style="margin:0">
+    <pre id="result">pending</pre>
+    <iframe id="frame" src="/" style="width:100vw;height:100vh;border:0"></iframe>
+    <script>
+      const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+      const result = document.getElementById('result')
+      const frame = document.getElementById('frame')
+
+      function inspect(win) {
+        const doc = win.document
+        const section = doc.getElementById('hackathons')
+        const sectionStyle = win.getComputedStyle(section)
+        const headings = [...doc.querySelectorAll('#hackathons h2, #hackathons h3')].map((el) => {
+          const rect = el.getBoundingClientRect()
+          const style = win.getComputedStyle(el)
+          return {
+            text: el.textContent.trim(),
+            opacity: style.opacity,
+            visibility: style.visibility,
+            display: style.display,
+            left: Math.round(rect.left),
+            right: Math.round(rect.right),
+            top: Math.round(rect.top),
+            bottom: Math.round(rect.bottom),
+            width: Math.round(rect.width),
+            height: Math.round(rect.height),
+          }
+        })
+        const milestoneBlocks = [...doc.querySelectorAll('#hackathons h3')].map((heading) => {
+          const block = heading.closest('[class*="mb-12"]')
+          const rect = block.getBoundingClientRect()
+          const style = win.getComputedStyle(block)
+          return {
+            text: heading.textContent.trim(),
+            opacity: style.opacity,
+            visibility: style.visibility,
+            transform: style.transform,
+            left: Math.round(rect.left),
+            right: Math.round(rect.right),
+            top: Math.round(rect.top),
+            bottom: Math.round(rect.bottom),
+            width: Math.round(rect.width),
+            height: Math.round(rect.height),
+          }
+        })
+        const roadmap = doc.querySelector('#hackathons svg')
+        const roadmapRect = roadmap ? roadmap.getBoundingClientRect() : null
+        const active = [...doc.querySelectorAll('nav button')]
+          .filter((button) => button.className.includes('active'))
+          .map((button) => button.textContent.trim())
+        return {
+          exists: !!section,
+          sectionOverflow: sectionStyle.overflow,
+          sectionOpacity: sectionStyle.opacity,
+          sectionRect: section ? (() => { const r = section.getBoundingClientRect(); return { top: Math.round(r.top), bottom: Math.round(r.bottom), height: Math.round(r.height) } })() : null,
+          navLabels: [...doc.querySelectorAll('nav button')].map((button) => button.textContent.trim()).filter(Boolean),
+          active,
+          headings,
+          milestoneBlocks,
+          roadmap: roadmapRect ? { left: Math.round(roadmapRect.left), right: Math.round(roadmapRect.right), top: Math.round(roadmapRect.top), bottom: Math.round(roadmapRect.bottom), width: Math.round(roadmapRect.width), height: Math.round(roadmapRect.height), pointerEvents: win.getComputedStyle(roadmap.closest('div')).pointerEvents } : null,
+          viewport: { width: win.innerWidth, height: win.innerHeight, scrollY: Math.round(win.scrollY) },
+          outOfViewport: headings.filter((h) => h.right < 0 || h.left > win.innerWidth || h.width <= 0 || h.height <= 0),
+        }
+      }
+
+      window.addEventListener('message', (event) => {
+        if (event.data?.type === 'error') window.__errors = [...(window.__errors || []), event.data.message]
+      })
+
+      frame.addEventListener('load', async () => {
+        const win = frame.contentWindow
+        const errors = []
+        win.addEventListener('error', (event) => errors.push(event.message))
+        win.addEventListener('unhandledrejection', (event) => errors.push(String(event.reason)))
+        await wait(1000)
+        const initial = inspect(win)
+        const hackathonsButton = [...win.document.querySelectorAll('nav button')].find((button) => button.textContent.trim() === 'HACKATHONS')
+        hackathonsButton?.click()
+        await wait(1200)
+        const afterNav = inspect(win)
+        result.textContent = JSON.stringify({ initial, afterNav, errors }, null, 2)
+      })
+    </script>
+  </body>
+</html>
